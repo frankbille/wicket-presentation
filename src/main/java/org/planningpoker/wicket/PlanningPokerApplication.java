@@ -1,9 +1,8 @@
 package org.planningpoker.wicket;
 
-
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.planningpoker.wicket.pages.FrontPage;
+import org.planningpoker.wicket.pages.PokerPage;
 
 /**
  * Wicket application
@@ -16,7 +15,7 @@ public class PlanningPokerApplication extends WebApplication {
 
 	@Override
 	public Class<? extends Page> getHomePage() {
-		return FrontPage.class;
+		return PokerPage.class;
 	}
 
 }
