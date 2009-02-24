@@ -3,7 +3,7 @@ package org.planningpoker.wicket;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.planningpoker.wicket.pages.CountPage;
+import org.planningpoker.wicket.pages.FrontPage;
 
 /**
  * Wicket application
@@ -16,7 +16,7 @@ public class PlanningPokerApplication extends WebApplication {
 
 	@Override
 	public Class<? extends Page> getHomePage() {
-		return CountPage.class;
+		return FrontPage.class;
 	}
 
 }
