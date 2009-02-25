@@ -1,7 +1,7 @@
 package org.planningpoker.wicket.pages;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.PropertyModel;
@@ -37,26 +37,30 @@ public class CountPage extends WebPage {
 		add(countLabel);
 		
 		// Decrease link
-		add(new AjaxLink<Void>("decrease") {
+		add(new AjaxFallbackLink<Void>("decrease") {
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void onClick(AjaxRequestTarget target) {
 				counter.decrease();
-			
-				target.addComponent(countLabel);
+
+				if (target != null) {
+					target.addComponent(countLabel);
+				}
 			}
 		});
 		
 		// Increase label
-		add(new AjaxLink<Void>("increase") {
+		add(new AjaxFallbackLink<Void>("increase") {
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void onClick(AjaxRequestTarget target) {
 				counter.increase();
 
-				target.addComponent(countLabel);
+				if (target != null) {
+					target.addComponent(countLabel);
+				}
 			}
 		});
 	}
